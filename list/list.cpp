@@ -14,9 +14,9 @@ int main()
 
     list.pop_front();
 
-    //list.printList(); // выведит: 2 3
+    list.printList(); // выведит: 2 3
 
-    //std::cout << "Size: " << list.getSize() << std::endl; // Output: Size: 2
+    std::cout << "Size: " << list.getSize() << std::endl; // Output: Size: 2
 
     for (LinkedList<int>::Iterator itr = list.begin(); itr != list.end(); ++itr) {
         std::cout << *itr << " ";
