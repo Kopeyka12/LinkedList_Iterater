@@ -12,11 +12,11 @@ int main()
 
     list.printList(); // выведит: 1 2 3
 
-    list.pop_front();
+    list.pop_front(); // уберет с списка последний элемент
 
-    list.printList(); // выведит: 2 3
+    //list.printList(); // выведит: 2 3
 
-    std::cout << "Size: " << list.getSize() << std::endl; // Output: Size: 2
+    //std::cout << "Size: " << list.getSize() << std::endl; // выведит: Size: 2
 
     for (LinkedList<int>::Iterator itr = list.begin(); itr != list.end(); ++itr) {
         std::cout << *itr << " ";
@@ -25,7 +25,7 @@ int main()
 
     list.clear();
 
-    list.printList(); // Output: List is empty!
+    list.printList(); 
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
