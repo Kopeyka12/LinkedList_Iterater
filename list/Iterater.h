@@ -1,5 +1,5 @@
-//
-//
+//@avtor Мирошин В. И.
+//Абстрактный класс итератора
 template <class T>
 class Iterator
 {

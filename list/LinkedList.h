@@ -1,3 +1,5 @@
+//@avtor Мирошин В. И.
+//Класс LinkedList
 #include <iostream>
 #include "Iterater.h"
 template<typename T>
@@ -110,7 +112,7 @@ public:
             std::cout << current->data << " ";
             current = current->next;
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
 };
 
