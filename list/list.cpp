@@ -11,7 +11,7 @@ int main()
     list.push_front(1);
 
     list.printList(); // выведит: 1 2 3
-
+    std::cout << std::endl;
     list.pop_front(); // уберет с списка последний элемент
 
     //list.printList(); // выведит: 2 3

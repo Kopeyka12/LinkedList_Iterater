@@ -112,7 +112,6 @@ public:
             std::cout << current->data << " ";
             current = current->next;
         }
-        //std::cout << std::endl;
     }
 };
 
