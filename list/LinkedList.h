@@ -1,12 +1,12 @@
 //@avtor Мирошин В. И.
 //Класс LinkedList
 #include <iostream>
-#include "Iterater.h"
+//#include "Iterater.h"
 template<typename T>
-//класс LinkedList
+//класс LinkedList односвязного списка
 class LinkedList {
 private:
-    //структура узла
+    //структура узла 
     struct Node {
         T data;         //даные узла
         Node* next;     //следующий узел
@@ -18,23 +18,23 @@ private:
 
 public:
     //итератор
-    class Iterator {
+    class LinListIterator {
     private:
         Node* current;
 
     public:
         //конструктор итератора
-        Iterator(Node* node) : current(node) {}
+        LinListIterator(Node* node) : current(node) {}
         //инкремент (переход к следующему элементу)
-        Iterator& operator++() {
+        LinListIterator& operator++() {
             if (current) {
                 current = current->next;
             }
             return *this;
         }
-        //инкремент (переход к следующему элементу)
-        Iterator operator++(int) {
-            Iterator itr = *this;
+        //оператор перехода на следующий узел (инкремент)
+        LinListIterator operator++(int) {
+            LinListIterator itr = *this;
             ++(*this);
             return itr;
         }
@@ -43,21 +43,21 @@ public:
             return current->data;
         }
         //операторы сравнния 
-        bool operator==(const Iterator& other) const {
+        bool operator==(const LinListIterator& other) const {
             return current == other.current;
         }
 
-        bool operator!=(const Iterator& other) const {
+        bool operator!=(const LinListIterator& other) const {
             return !(*this == other);
         }
     };
     //итераторы, указывающие на начало и конец дерева соответственно
-    Iterator begin() const {
-        return Iterator(head);
+    LinListIterator begin() const {
+        return LinListIterator(head);
     }
 
-    Iterator end() const {
-        return Iterator(nullptr);
+    LinListIterator end() const {
+        return LinListIterator(nullptr);
     }
 
     //конструктор 
@@ -106,7 +106,6 @@ public:
             std::cout << "List is empty!\n";
             return;
         }
-
         Node* current = head;
         while (current != nullptr) {
             std::cout << current->data << " ";

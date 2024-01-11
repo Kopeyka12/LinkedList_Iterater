@@ -3,9 +3,13 @@
 #include "pch.h"
 #include <cassert>
 #include <sstream>
-
+//тест на вывод списка
 TEST(TestList, TestPrint) 
 {
+    LinkedList <int> list2;
+
+
+
     LinkedList <int> list1;
 
     list1.push_front(5);
@@ -30,19 +34,21 @@ TEST(TestList, TestPrint)
     list1.push_front(67);
     list1.push_front(99);
 
-    std::ostringstream oss;
-    std::streambuf* p_cout_streambuf = std::cout.rdbuf();
-    std::cout.rdbuf(oss.rdbuf());
+    std::ostringstream oss1;
+    std::streambuf* p_cout_streambuf1 = std::cout.rdbuf();
+    std::cout.rdbuf(oss1.rdbuf());
 
-    list1.printList();
+    for (LinkedList<int>::LinListIterator itr = list1.begin(); itr != list1.end(); ++itr) {
+        std::cout << *itr << " ";
+    }
 
-    std::cout.rdbuf(p_cout_streambuf);
+    std::cout.rdbuf(p_cout_streambuf1);
 
     // тестируем наш метод
-    assert(oss.str() == "99 67 12 5 -9 ");
+    assert(oss1.str() == "99 67 12 5 -9 ");
     list1.clear();
 }
-
+//тест на удаление узла кучи и итерарота 
 TEST(TestList, TestPop)
 {
     LinkedList <int> list2;
@@ -54,20 +60,18 @@ TEST(TestList, TestPop)
     list2.push_front(12);
     list2.push_front(-9);
 
-    std::ostringstream oss;
-    std::streambuf* p_cout_streambuf = std::cout.rdbuf();
-    std::cout.rdbuf(oss.rdbuf());
+    std::ostringstream oss3;
+    std::streambuf* p_cout_streambuf3 = std::cout.rdbuf();
+    std::cout.rdbuf(oss3.rdbuf());
 
     list2.pop_front();
-    //list2.printList();
 
-    for (LinkedList<int>::Iterator itr = list2.begin(); itr != list2.end(); ++itr) {
+    for (LinkedList<int>::LinListIterator itr = list2.begin(); itr != list2.end(); ++itr) {
         std::cout << *itr << " ";
     }
-    std::cout << std::endl;
 
-    std::cout.rdbuf(p_cout_streambuf);
+    std::cout.rdbuf(p_cout_streambuf3);
 
     // тестируем наш метод
-    assert(oss.str() == "12 8 1 9 5 ");
+    assert(oss3.str() == "12 8 1 9 5 ");
 }

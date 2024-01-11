@@ -14,11 +14,7 @@ int main()
     std::cout << std::endl;
     list.pop_front(); // уберет с списка последний элемент
 
-    //list.printList(); // выведит: 2 3
-
-    //std::cout << "Size: " << list.getSize() << std::endl; // выведит: Size: 2
-
-    for (LinkedList<int>::Iterator itr = list.begin(); itr != list.end(); ++itr) {
+    for (LinkedList<int>::LinListIterator itr = list.begin(); itr != list.end(); ++itr) {
         std::cout << *itr << " ";
     }
     std::cout << std::endl;

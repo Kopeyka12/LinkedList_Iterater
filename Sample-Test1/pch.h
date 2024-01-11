@@ -5,4 +5,5 @@
 #pragma once
 
 #include "gtest/gtest.h"
-#include"C:\Users\Влад\Desktop\Учеба\УЧЁБА\3 курс\САОД\list\list\LinkedList.h"
+#include"..\list\LinkedList.h"
+#include"..\list\Iterater.h"
